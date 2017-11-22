@@ -20,6 +20,6 @@ RUN ["mvn", "install"]
 # CMD ["/usr/lib/jvm/java-8-openjdk-amd64/bin/java", "-jar", "target/spring-boot-jpa-docker-webapp.jar"]
 # ADD /code/target/spring-boot-jpa-docker-webapp-0.0.1-SNAPSHOT.jar app.jar
 ADD wrapper.sh wrapper.sh
-RUN bash -c 'chmod +x /wrapper.sh'
-RUN bash -c 'touch /app.jar'
+RUN bash -c 'chmod +x wrapper.sh'
+# RUN bash -c 'touch /app.jar'
 ENTRYPOINT ["/bin/bash", "/wrapper.sh"]
